@@ -1,6 +1,6 @@
 # Simplified Binance Futures Trading Bot
 
-A command-line bot built with Python to trade on the **Binance USDT-M Futures Testnet**. The bot supports market, limit, TWAP, and OCO orders. It uses the official `python-binance` package and allows configurable trading via CLI.
+A command-line bot built with Python to trade on the **Binance USDT-M Futures Testnet**. The bot supports market, limit, stop ,TWAP and Grid order strategies. It uses the official `python-binance` package and allows configurable trading via CLI.
 
 ---
 
@@ -66,11 +66,10 @@ python run_bot.py market --symbol BTCUSDT --qty 0.01 --side BUY
 ```bash
 python run_bot.py limit --symbol BTCUSDT --qty 0.01 --price 65000 --side SELL
 ```
-
-### OCO Order (Stop-Loss + Take-Profit)
+### Stop the Current Order
 
 ```bash
-python run_bot.py oco --symbol BTCUSDT --qty 0.01 --side SELL --tp-stop-price 70000 --sl-stop-price 58000
+python run_bot.py stop --symbol BTCUSDT --qty 0.01 --stop-price 65000 
 ```
 
 ### TWAP Order
@@ -78,12 +77,17 @@ python run_bot.py oco --symbol BTCUSDT --qty 0.01 --side SELL --tp-stop-price 70
 ```bash
 python run_bot.py twap --symbol BTCUSDT --qty 0.10 --side BUY --start-time 2025-06-22T10:00:00Z --end-time 2025-06-22T12:00:00Z --slices 12
 ```
+---
+### Grid Strategy
 
+```bash
+python run_bot.py grid --symbol BTCUSDT --qty 0.10  --lower-price  --upper-price --levels
+```
 ---
 
 ## 📄 Logging
 
-All logs are stored in `bot.log`:
+All logs are stored in `binance_order.log`:
 
 * Order success/failure
 * API errors and responses
@@ -93,4 +97,4 @@ All logs are stored in `bot.log`:
 
 ## 📬 Contact
 
-Created by [Your Name](https://github.com/your-username) — feel free to open issues or pull requests!
+Created by Ayaan Amjad(https://github.com/Ayaan-tech) — feel free to open issues or pull requests!
