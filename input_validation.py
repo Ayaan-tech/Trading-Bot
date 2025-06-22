@@ -16,11 +16,7 @@ class LimitOrder(BaseOrderInput):
     
 class StopOrder(BaseOrderInput):
     type: Literal["STOP"]
-    stop_price: float = Field(..., gt=0, description="Stop price must be greater than 0 for STOP orders")
-    
-    
-
-    
+    stop_price: float = Field(..., gt=0, description="Stop price must be greater than 0 for STOP orders")    
 class TwapOrder(BaseOrderInput):
     type: Literal["TWAP"]
     start_time: str
@@ -49,8 +45,6 @@ OrderInput = Union[
     MarketOrder,
     LimitOrder,
     StopOrder,
-    
-    
     TwapOrder,
     GridOrder,
 ]
