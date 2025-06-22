@@ -1,0 +1,9 @@
+numpy
+pandas
+streamlit
+scikit-learn
+pydantic
+matplotlib
+scipy
+python-binance
+ipykernel
